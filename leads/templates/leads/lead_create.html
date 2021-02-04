@@ -6,9 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Lead Detail</h1>
-    <p>Name: {{lead.first_name}} {{lead.last_name}}</p>
-    <p>Age: {{lead.age}}</p>
-    <p>Agent: {{lead.agent}}</p>
+    <h1>Create Lead</h1>
+    <form action="" method="POST">
+      {% csrf_token %} {{form.as_p}}
+      <button type="sumbit">Submit</button>
+    </form>
   </body>
 </html>
