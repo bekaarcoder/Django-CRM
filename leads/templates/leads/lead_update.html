@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Create Lead</h1>
+<h1>Update Lead {{lead.first_name}}</h1>
 <form action="" method="POST">
   {% csrf_token %} {{form.as_p}}
   <button type="sumbit">Submit</button>

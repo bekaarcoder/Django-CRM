@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Lead Detail</h1>
-    <p>Name: {{lead.first_name}} {{lead.last_name}}</p>
-    <p>Age: {{lead.age}}</p>
-    <p>Agent: {{lead.agent}}</p>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h1>Lead Detail</h1>
+<p>Name: {{lead.first_name}} {{lead.last_name}}</p>
+<p>Age: {{lead.age}}</p>
+<p>Agent: {{lead.agent}}</p>
+<p>
+  <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+  <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
+</p>
+{% endblock content %}

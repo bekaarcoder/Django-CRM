@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Lead List</h1>
-    {% for lead in leads %}
-    <div>
-      <a href="/leads/{{lead.id}}">{{lead.first_name}} {{lead.last_name}}</a>
-    </div>
-    {% endfor %}
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<a href="{% url 'leads:lead-create' %}">Create a new lead</a>
+<h1>Lead List</h1>
+{% for lead in leads %}
+<div>
+  <a href="{% url 'leads:lead-detail' lead.pk %}"
+    >{{lead.first_name}} {{lead.last_name}}</a
+  >
+</div>
+{% endfor %} {% endblock content %}

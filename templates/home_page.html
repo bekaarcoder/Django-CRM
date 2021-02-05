@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Hello Django</h1>
+    <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
     <ul>
       {% for lead in leads %}
       <li>{{lead.first_name}} {{lead.last_name}}</li>
